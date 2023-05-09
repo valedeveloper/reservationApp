@@ -1,0 +1,15 @@
+:root{ 
+  --color-darkblue:#003075;
+  --color-blue:#0067b8;
+  --color-golden:#febb02;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+}
+

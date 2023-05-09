@@ -1,0 +1,21 @@
+header {
+  background-color: var(--color-darkblue);
+  padding: 10px 100px;
+  padding-bottom: 100px;
+  position: relative;
+}
+
+.titleItem {
+  font-weight: 300;
+  font-size: 15px;
+}
+.descriptionHeader {
+  color: white;
+  padding-top: 30px;
+}
+.buttonDescription {
+  margin: 0;
+  padding: 10px;
+  color: white;
+  background-color: var(--color-blue);
+}

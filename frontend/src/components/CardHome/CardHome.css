@@ -1,0 +1,34 @@
+
+.cardHome{ 
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 300px;
+}
+.titleCardHome{
+    font-size: 15px;
+}
+.countrySpan{ 
+    font-size: 15px;
+}
+.cardHome img{ 
+    width: 100%;
+    height:300px;
+}
+
+.price{ 
+    font-size: 15px;
+}
+.rating{
+    background-color: var(--color-darkblue);
+    padding: 2px;
+    color: white;
+}
+.opinions{ 
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.opinions span{
+    font-size: 15px;
+}

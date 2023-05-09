@@ -1,0 +1,68 @@
+.filterContainer {
+  position: absolute;
+  border: 3px solid var(--color-golden);
+  background-color: white;
+  bottom: -25px;
+  width: 85%;
+}
+
+.formFilter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 5px;
+}
+.itemInput {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.itemInput input {
+  border-style: none;
+  padding: 10px 20px;
+}
+.itemInput span {
+  color: gray;
+}
+
+.itemsPersons {
+  padding: 10px 20px;
+  position: absolute;
+  right: 280px;
+  -webkit-box-shadow: 4px 6px 7px 2px rgba(0,0,0,0.26); 
+  box-shadow: 4px 6px 7px 2px rgba(0,0,0,0.26);
+  background-color: white;
+  z-index: 50;
+}
+.item {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+}
+.itemTitle {
+  color: gray;
+}
+.optionCounter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.signos {
+  color: var(--color-darkblue);
+  border: 1px solid var(--color-darkblue);
+  padding: 5px 10px;
+}
+.number {
+  font-size: 15px;
+}
+.dateContainer{ 
+  position: absolute;
+  right: 400px;
+  top: 50px;
+  z-index: 50;
+
+}

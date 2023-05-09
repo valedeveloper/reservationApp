@@ -1,0 +1,13 @@
+.button{ 
+    border-style: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    color: var(--color-darkblue);
+    background-color: white;
+}
+.button.description {
+    margin: 0;
+    padding: 10px;
+    color: white;
+    background-color: var(--color-blue);
+  }

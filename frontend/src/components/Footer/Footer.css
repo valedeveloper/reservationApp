@@ -1,0 +1,22 @@
+footer{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: white;
+    color: var(--color-darkblue);
+    padding: 15px;
+}
+footer ul{ 
+    list-style: none;
+}
+footer ul li{ 
+    margin-bottom: 15px;
+}
+.spanCopy{
+    text-align: center;
+    background-color: var(--color-darkblue);
+    color: white;
+    margin: 0;
+    padding: 15px;
+}
