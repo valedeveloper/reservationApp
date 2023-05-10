@@ -1,0 +1,67 @@
+.sectionResults {
+  display: flex;
+  justify-content: space-between;
+}
+.resultsWrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  width: 100%;
+  gap: 15px;
+
+}
+.containerForm {
+  flex: 2;
+  background-color: antiquewhite;
+  background-color: var(--color-golden);
+  padding: 10px;
+  border-radius: 15px;
+  position:sticky;
+  height: max-content;
+
+}
+.containerForm h1 {
+  font-size: 30px;
+  color: var(--color-darkblue);
+}
+.spanDate{
+    padding: 5px;
+    color: black;
+    background-color: white;
+
+} 
+
+.formSearchResult{ 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.formSearchResult label{ 
+    font-size: 15px;
+    font-weight: 700;
+
+}
+.formSearchResult input{ 
+    padding: 5px;
+}
+.optionItem{ 
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.optionItem span{ 
+    font-size: 15px;
+
+}
+.optionItem input{ 
+    width: 30px;
+}
+.listCardResults{
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}

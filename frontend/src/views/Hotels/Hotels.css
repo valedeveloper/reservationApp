@@ -1,0 +1,75 @@
+.sectionHotel{ 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 50px;
+
+}
+.topContainer{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.locationHotel{ 
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+.locationHotel h1{ 
+    font-size: 30px;
+}
+.opinionHotel{ 
+    color: var(--color-blue);
+}
+.comment{ 
+    color: green;
+    font-weight: 600;
+}
+.hotelImages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .hotelImgWrapper {
+    width: 33%;
+  }
+  
+  .hotelImg {
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+.containerImages img{ 
+    width: 450px;
+}
+.descriptionHotel{ 
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+}
+.leftContainer{ 
+    width: fit-content;
+    text-align: justify;
+}
+.rightContainer{ 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ebf3ff;
+    width:30%;
+    padding: 20px;
+
+}
+.rightContainer h3{ 
+    text-align: center;
+    color: #555;}
+
+.rightContainer p{ 
+    text-align: justify;
+}
+.rightContainer span{ 
+    font-size: 20px;
+
+}

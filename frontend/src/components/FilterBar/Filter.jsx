@@ -2,7 +2,7 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
-
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaBed } from "react-icons/fa";
 import { BsFillCalendarWeekFill } from "react-icons/bs";
@@ -20,6 +20,8 @@ const OPTIONSNAMES = {
 };
 
 function Filter() {
+  const navigate = useNavigate();
+  const [destination, setDestination] = useState("");
   const [isDate, setIsDate] = useState(false);
   const [date, setDate] = useState([
     {
@@ -35,6 +37,9 @@ function Filter() {
     room: 0,
   });
 
+  const handledSubmit = () => {
+    navigate("/results", { state: {destination,date,countOptions} }); //Navegar a (sitio), estados para compartir
+  };
   const handledOptionDate = () => {
     setIsDate(!isDate);
   };
@@ -52,13 +57,19 @@ function Filter() {
           : 0,
     }));
   };
-
+  const handledDestination = (e) => {
+    setDestination(e.target.value);
+  };
   return (
     <div className="filterContainer">
-      <form className="formFilter">
+      <form className="formFilter" onSubmit={handledSubmit}>
         <div className="itemInput">
           <FaBed fontSize={"20px"} color="gray" />
-          <input type="text" placeholder="Where are you going?" />
+          <input
+            type="text"
+            placeholder="Where are you going?"
+            onChange={handledDestination}
+          />
         </div>
         <div className="itemInput">
           <BsFillCalendarWeekFill fontSize={"20px"} color="gray" />
@@ -84,7 +95,8 @@ function Filter() {
             {countOptions.room} Room
           </span>
         </div>
-        <Button title="Search" isDescription />
+          {" "}
+          <Button title="Search" isDescription />
       </form>
       {isOptions && (
         <div className="itemsPersons">
