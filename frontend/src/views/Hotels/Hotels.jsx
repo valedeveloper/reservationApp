@@ -1,8 +1,14 @@
 import Suscribe from "../../components/Suscribe/Suscribe";
 import { MdLocationPin } from "react-icons/md";
+import {
+  BsFillArrowRightCircleFill,
+  BsFillArrowLeftCircleFill,
+} from "react-icons/bs";
+import { AiFillCloseCircle } from "react-icons/ai";
 import Button from "../../components/Button/Button";
 import "./Hotels.css";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
+
 const photos = [
   {
     src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707778.jpg?k=56ba0babbcbbfeb3d3e911728831dcbc390ed2cb16c51d88159f82bf751d04c6&o=&hp=1",
@@ -23,7 +29,31 @@ const photos = [
     src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707389.jpg?k=52156673f9eb6d5d99d3eed9386491a0465ce6f3b995f005ac71abc192dd5827&o=&hp=1",
   },
 ];
+const ACTION_SLIDER = {
+  increase: "i",
+  decrement: "d",
+};
 function Hotels() {
+  const [isSlider, setIsSlider] = useState(false);
+  const [numberSlider, setNumberSlider] = useState(null);
+  console.log(numberSlider);
+  const handledSlider = (index) => {
+    setNumberSlider(index);
+    setIsSlider(true);
+  };
+  const handledClose = () => {
+    setIsSlider(false);
+  };
+  const handledNext = (action) => {
+    let newNumberSlider;
+    if (action === ACTION_SLIDER.increase) {
+       newNumberSlider = numberSlider === 5 ? 0 : numberSlider + 1; //Es buena pràctica crear una variable y manejar asì los estados. Cuando los estados estàn dentro de condicionales, es mejor crear variable
+    }
+    if (action === ACTION_SLIDER.decrement) {
+       newNumberSlider = numberSlider === 0 ? 5 : numberSlider - 1;
+    }
+    setNumberSlider(newNumberSlider); //Dependiendo de cuàl haya sido, se pasa la variable para setear el estado
+  };
 
   return (
     <>
@@ -46,15 +76,36 @@ function Hotels() {
         </div>
         <div className="hotelImages">
           {photos.map((photo, i) => (
-            <div className="hotelImgWrapper" key={i}>
-              <img
-                src={photo.src}
-                alt=""
-                className="hotelImg"
-              />
+            <div
+              className="hotelImgWrapper"
+              key={i}
+              onClick={() => handledSlider(i)} //No es necesario ("poner paràmetro")=> solo se hace en la funciòn
+            >
+              <img src={photo.src} alt="" className="hotelImg" />
             </div>
           ))}
         </div>
+        {isSlider && (
+          <div className="sliderContainer">
+            <AiFillCloseCircle className="iconSlider" onClick={handledClose} />
+            <div className="sliderWrap">
+              <BsFillArrowLeftCircleFill
+                className="iconSlider"
+                onClick={() => handledNext(ACTION_SLIDER.decrement)}
+              />
+              <div className="containerImagesSlider">
+                <img
+                  src={photos[numberSlider].src} //El index me trae la posiciòn del objeto, pero para llegar al objeto se necesita desestructurar
+                  alt={`This is the img ${numberSlider}`}
+                />
+              </div>
+              <BsFillArrowRightCircleFill
+                className="iconSlider"
+                onClick={() => handledNext(ACTION_SLIDER.increase)}
+              />
+            </div>
+          </div>
+        )}
 
         <div className="descriptionHotel">
           <div className="leftContainer">
@@ -83,11 +134,9 @@ function Hotels() {
               <strong>$945</strong> (9 nights)
             </span>
             <Button isDescription title="Reserve ot Book Now!" />
-
           </div>
         </div>
       </section>
-
       <Suscribe />
     </>
   );

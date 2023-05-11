@@ -1,75 +1,104 @@
-.sectionHotel{ 
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 50px;
-
+.sectionHotel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 50px;
 }
-.topContainer{ 
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+.topContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
-.locationHotel{ 
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
+.locationHotel {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
 }
-.locationHotel h1{ 
-    font-size: 30px;
+.locationHotel h1 {
+  font-size: 30px;
 }
-.opinionHotel{ 
-    color: var(--color-blue);
+.opinionHotel {
+  color: var(--color-blue);
 }
-.comment{ 
-    color: green;
-    font-weight: 600;
+.comment {
+  color: green;
+  font-weight: 600;
 }
 .hotelImages {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .hotelImgWrapper {
-    width: 33%;
-  }
-  
-  .hotelImg {
-    width: 100%;
-    object-fit: cover;
-    cursor: pointer;
-  }
-.containerImages img{ 
-    width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.descriptionHotel{ 
-    display: flex;
-    align-items: center;
-    gap: 35px;
 
+.hotelImgWrapper {
+  width: 33%;
 }
-.leftContainer{ 
-    width: fit-content;
-    text-align: justify;
-}
-.rightContainer{ 
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #ebf3ff;
-    width:30%;
-    padding: 20px;
 
+.hotelImg {
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
 }
-.rightContainer h3{ 
-    text-align: center;
-    color: #555;}
-
-.rightContainer p{ 
-    text-align: justify;
+.containerImages img {
+  width: 450px;
 }
-.rightContainer span{ 
-    font-size: 20px;
+.descriptionHotel {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+.leftContainer {
+  width: fit-content;
+  text-align: justify;
+}
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ebf3ff;
+  width: 30%;
+  padding: 20px;
+}
+.rightContainer h3 {
+  text-align: center;
+  color: #555;
+}
 
+.rightContainer p {
+  text-align: justify;
+}
+.rightContainer span {
+  font-size: 20px;
+}
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0px;
+  height: 100vh;
+  padding-right: 25px;
+}
+.sliderWrap {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  justify-content: center;
+  width: 100%;
+}
+.containerImagesSlider {
+  width: 900px;
+}
+.containerImagesSlider img {
+  width: 100%;
+  object-fit: contain;
+}
+.iconSlider{ 
+    font-size: 30px;
+    color: rgb(119, 111, 111);
 }

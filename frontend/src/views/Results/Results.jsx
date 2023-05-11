@@ -7,11 +7,11 @@ import { useLocation } from "react-router-dom";
 import "./Results.css";
 import { format } from "date-fns";
 function Results() {
-  const location = useLocation();
+  const location = useLocation(); //Del location vienen los estados que se le hayan pasado a este route
 
-  const [destination, setDestination] = useState(location.state.destination);
-  const [date, setDate] = useState(location.state.date);
-  const [options, setOption] = useState(location.state.countOptions);
+  const [destination] = useState(location.state.destination);
+  const [date] = useState(location.state.date);
+  const [options] = useState(location.state.countOptions);
 
   const [isDate, setIsDate] = useState(false);
   const handledOptionDate = () => {
@@ -27,7 +27,6 @@ function Results() {
             <input id="country" placeholder={destination} />
             <label id="date">Ckeck in Date</label>
             <span className="spanDate" onClick={handledOptionDate}>
-              {" "}
               {`${format(date[0].startDate, "MM/dd/yyyy") ?? "Inicio"} to ${
                 format(date[0].endDate, "MM/dd/yyyy") ?? "Fin"
               }`}
