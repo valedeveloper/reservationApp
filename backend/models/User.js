@@ -20,25 +20,10 @@ const userSchema = new Schema(
       require: true,
       min: 6,
     },
-    country: {
-      type: String,
-      require: true,
-    },
-    city: {
-      type: String,
-      require: true,
-    },
-    phone: {
-      type: String,
-      require: true,
-    },
-    img: {
-      type: String,
-    },
     isAdmin: {
       type: Boolean,
       default: false,
-    },
+    }
   },
   {
     timestamps: true, //Esta opciòn entra como paràmetro del Schema
