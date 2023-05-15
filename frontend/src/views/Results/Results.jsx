@@ -12,8 +12,8 @@ function Results() {
   const [destination] = useState(location.state.destination);
   const [date] = useState(location.state.date);
   const [options] = useState(location.state.countOptions);
-
   const [isDate, setIsDate] = useState(false);
+  
   const handledOptionDate = () => {
     setIsDate(!isDate);
   };
