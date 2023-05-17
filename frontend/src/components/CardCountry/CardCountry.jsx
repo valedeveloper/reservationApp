@@ -1,5 +1,8 @@
+import { useData } from '../../hooks/useData'
 import './CardCountry.css'
 function CardCountry({image,country,description}){ 
+    const { data} =useData("http://localhost:8800/api/hotels")
+    console.log(data)
     return(
         <div className="cardCountry">
             <img src={image} alt={`This is ${country}`}/>

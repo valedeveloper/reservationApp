@@ -5,9 +5,11 @@ import userRouter from "./routes/users.js";
 import hotelRouter from "./routes/hotels.js";
 import roomRouter from "./routes/rooms.js";
 import authRouter from "./routes/auth.js";
+import cookieParser from "cookie-parser"
 const app = express();
 
 app.use(express.json()); //Lo que recibe es json
+app.use(cookieParser()) //Para utilizar cookie parser desde nuetra app 
 dotenv.config(); //Permitir tener acceso a la carpeta de variables de entorno (.env)
 
 const PORT = 8800;

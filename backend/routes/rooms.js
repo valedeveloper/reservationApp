@@ -6,6 +6,7 @@ import {
   deleteRoom,
   getSingleRoom,
 } from "../controllers/room.js";
+import { verifyAdmin } from "../utilities/verifyToken.js";
 const router = express.Router();
 
 //get
@@ -14,18 +15,19 @@ router.get("/", getRoom);
 
 //post
 
-router.post("/", createRoom);
+router.post("/:idHotel", verifyAdmin, createRoom);
 
 //put
 
-router.put("/:id", updateRoom);
+router.put("/:idRoom", verifyAdmin, updateRoom);
 
 //delete
 
-router.delete("/:id", deleteRoom);
+router.delete("/:idRoom/:idHotel", verifyAdmin, deleteRoom);
 
 //findOne
 
-router.get("/:id", getSingleRoom);
+router.get(":id", getSingleRoom);
+
 
 export default router;

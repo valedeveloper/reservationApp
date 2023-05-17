@@ -53,3 +53,17 @@ export const getSingleHotel = async (req, res,next) => {
     next(error);
   }
 };
+export const countByCity =  async (req, res) => {
+  const cities = req.query.cities.split(",");
+  try {
+    const list = await Promise.all(
+      cities.map((city) => {
+         return HotelModel.countDocuments({ city: city });
+        // return HotelModel.find({city:city}).length //Busque en el modelo y encuentre esta city y la cuenta
+      })
+    );
+    res.status(200).json({ list });
+  } catch (error) {
+    next(error);
+  }
+};

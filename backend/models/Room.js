@@ -18,13 +18,18 @@ const roomSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    roomNumbers: [{ number: Number, unavailableDates: { type: [Date] } }],
+    roomNumbers: [
+      {
+        number: Number,
+        unavailableDates: {
+          type: [Date],
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
 
-const RoomModel=mongoose.model("Room",roomSchema)
+const RoomModel = mongoose.model("Room", roomSchema);
 
-export default RoomModel
-
-
+export default RoomModel;
