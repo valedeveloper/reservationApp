@@ -8,6 +8,9 @@ export const getData = async ({ url }) => {
     console.log(error);
   }
 };
+
+
+
 // export const getData = async ({ url }) => {
 //   return axios(url)
 //   .then(res=>res.data)

@@ -1,7 +1,7 @@
 import { useData } from '../../hooks/useData'
 import './CardCountry.css'
 function CardCountry({image,country,description}){ 
-    const { data} =useData("http://localhost:8800/api/hotels")
+    const { data} =useData("http://localhost:8800/api/hotel")
     console.log(data)
     return(
         <div className="cardCountry">

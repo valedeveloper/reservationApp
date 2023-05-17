@@ -8,8 +8,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import Button from "../../components/Button/Button";
 import "./Hotels.css";
 import { useState } from "react";
-import {photos} from "../../data/Photos"
-
+import { photos } from "../../data/Photos";
 
 const ACTION_SLIDER = {
   increase: "i",
@@ -29,10 +28,10 @@ function Hotels() {
   const handledNext = (action) => {
     let newNumberSlider;
     if (action === ACTION_SLIDER.increase) {
-       newNumberSlider = numberSlider === 5 ? 0 : numberSlider + 1; //Es buena pràctica crear una variable y manejar asì los estados. Cuando los estados estàn dentro de condicionales, es mejor crear variable
+      newNumberSlider = numberSlider === 5 ? 0 : numberSlider + 1; //Es buena pràctica crear una variable y manejar asì los estados. Cuando los estados estàn dentro de condicionales, es mejor crear variable
     }
     if (action === ACTION_SLIDER.decrement) {
-       newNumberSlider = numberSlider === 0 ? 5 : numberSlider - 1;
+      newNumberSlider = numberSlider === 0 ? 5 : numberSlider - 1;
     }
     setNumberSlider(newNumberSlider); //Dependiendo de cuàl haya sido, se pasa la variable para setear el estado
   };
