@@ -1,16 +1,30 @@
-import { useData } from '../../hooks/useData'
-import './CardCountry.css'
-function CardCountry({image,country,description}){ 
-    const { data} =useData("http://localhost:8800/api/hotel")
-    console.log(data)
-    return(
-        <div className="cardCountry">
-            <img src={image} alt={`This is ${country}`}/>
-            <div className="descriptionCardCountry">
-                <h1>{country}</h1>
-                <p>{description}</p>
+import { listCountries } from "../../data/Coutries";
+import { useData } from "../../hooks/useData";
+
+import "./CardCountry.css";
+
+function CardsCountries() {
+  const { data, loading } = useData(
+    "hotel/countByCity?cities=Dublin,Colombia,Islandia"
+  );
+  return (
+    <>
+      {loading ? (
+        "Loading"
+      ) : (
+        <>
+          {listCountries.map((country, i) => (
+            <div className="cardCountry" key={country.id}>
+              <img src={country.image} alt={`This is ${country.id}`} />
+              <div className="descriptionCardCountry">
+                <h1>{country.county}</h1>
+                <p>{`${data?.list[i]} properties`}</p>
+              </div>
             </div>
-        </div>
-    )
+          ))}
+        </>
+      )}
+    </>
+  );
 }
-export default CardCountry
+export default CardsCountries;

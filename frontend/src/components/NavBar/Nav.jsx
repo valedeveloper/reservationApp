@@ -10,7 +10,7 @@ function Nav() {
       </Link>
       <div className="containerButtons">
         <Button title="Register" />
-        <Button title="Login" />
+        <Link to="/login"><Button title="Login" /></Link>
       </div>
     </nav>
   );

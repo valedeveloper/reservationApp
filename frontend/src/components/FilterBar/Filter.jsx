@@ -8,6 +8,8 @@ import { FaBed } from "react-icons/fa";
 import { BsFillCalendarWeekFill } from "react-icons/bs";
 import { VscPerson } from "react-icons/vsc";
 import Button from "../Button/Button";
+import { useContext } from "react";
+import { SearchContext } from "../../context/SearchContext";
 import "./Filter.css";
 const OPTIONSACTIONS = {
   i: "increment",
@@ -21,7 +23,7 @@ const OPTIONSNAMES = {
 
 function Filter() {
   const navigate = useNavigate();
-  const [destination, setDestination] = useState("");
+  const [destination, setDestination] = useState("Colobia");
   const [isDate, setIsDate] = useState(false);
   const [date, setDate] = useState([
     {
@@ -36,8 +38,10 @@ function Filter() {
     children: 0,
     room: 0,
   });
+  const {dispatch,OPTION_ACTIONS}=useContext(SearchContext)
 
   const handledSubmit = () => {
+    dispatch({ type: OPTION_ACTIONS.newSearch, payload: { destination, date, countOptions} });
     navigate("/results", { state: {destination,date,countOptions} }); //Navegar a (sitio), estados para compartir
   };
   const handledOptionDate = () => {
@@ -96,7 +100,7 @@ function Filter() {
           </span>
         </div>
           {" "}
-          <Button title="Search" isDescription />
+          <Button title="Search" isDescription onClick={handledSubmit}/>
       </form>
       {isOptions && (
         <div className="itemsPersons">

@@ -7,9 +7,9 @@ export const registerUser = async (req, res, next) => {
   try {
     //Generar contraseña
     //Creo una variable
-    const salt = await bcrypt.genSaltSync(10);
+    const salt = bcrypt.genSaltSync(10);
     //Apartir de la contraseña que creò el usuario, esta librerìa la tasnsfotma
-    const hashedPasswaord = await bcrypt.hashSync(req.body.password, salt);
+    const hashedPasswaord = bcrypt.hashSync(req.body.password, salt);
 
     const user = new User({ ...req.body, password: hashedPasswaord }); //Traigo el modelo, lo instancio.
     const userSave = await user.save(); //Lo llamo para acceder a sus métodos
